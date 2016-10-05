@@ -1,2 +1,3 @@
-# css-mask
-CSS MASK 
+## CSS MASK
+
+Practicing css mask animation
