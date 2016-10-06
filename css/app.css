@@ -1,24 +1,194 @@
-body{
-  background: #ae97ef;
-  font-family: Helvetica;
-  color: #ffffff;
+/* COMMON DEMO STYLE */
+.container {
+  height: 100vh;
   width: 100vw;
-  height: 100%vh;
-}
-a {
-  color: black;
-  text-decoration: none;
-  font-family: 'Rock Salt', cursive;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
 }
 
-.container .section{
-  width: 100vw;
-  height: 100vh;
+.container .section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container .section .text h1 {
+  font-size: 1em;
+
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  margin: 0;
+  display: table;
+  text-align: center;
+}
+
+.container .section .text p {
+  font-size: 16px;
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  margin: 0;
+}
+
+@media screen and (max-width: 640px) {
+  .container .section .text h1 {
+    font-size: 1em;
+  }
+  .container .section .text p {
+    bottom: 20px;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    right: auto;
+    font-size: 14px;
+  }
+}
+
+.container .bullets {
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+  z-index: 100;
+}
+
+.container .bullets .arrow {
+  float: left;
+  cursor: pointer;
+}
+
+.container .bullets .arrow.next {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin-top: -11px;
+}
+
+.container .bullets .arrow:hover.previous {
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transform: translate3d(-5px, 0, 0);
+          transform: translate3d(-5px, 0, 0);
+}
+
+.container .bullets .arrow:hover.next {
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  -webkit-transform: translate3d(5px, 0, 0) rotate(180deg);
+          transform: translate3d(5px, 0, 0) rotate(180deg);
+}
+
+.container .bullets .arrow svg {
+  height: 40px;
+  width: 25px;
+  padding: 2px;
+}
+
+.container .bullets .arrow svg polygon {
+  fill: #fff;
+}
+
+.container .bullets .arrow {
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+          transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  margin-right: 10px;
+  margin-top: -7px;
+}
+
+@media screen and (max-width: 700px) {
+  .container .bullets {
+    bottom: 60px;
+    left: 50%;
+    z-index: 120;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  .container .bullets .arrow.previous:hover {
+    -webkit-transform: none;
+            transform: none;
+  }
+  .container .bullets .arrow.next:hover {
+    -webkit-transform: translate3d(0, 0, 0) rotate(180deg);
+            transform: translate3d(0, 0, 0) rotate(180deg);
+  }
+}
+
+@-webkit-keyframes mask-play {
+  from {
+    -webkit-mask-position: 0% 0;
+            mask-position: 0% 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+            mask-position: 100% 0;
+  }
+}
+
+@keyframes mask-play {
+  from {
+    -webkit-mask-position: 0% 0;
+            mask-position: 0% 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+            mask-position: 100% 0;
+  }
+}
+
+
+
+
+{
+  background: url(../images/urban-sprite.png) no-repeat -9999px -9999px;
+}
+
+.container {
+  background: url(../images/urban-sprite-2.png) no-repeat -9999px -9999px;
+}
+/*
+.container h1 {
+  font-size: 180px !important;
+  letter-spacing: 4px;
+  text-shadow: 14px 0px rgba(1, 0, 0, 0.5);
+}*/
+
+.container .section:nth-child(1) {
+  background-image: url(../images/code.jpeg);
+}
+
+.container .section:nth-child(2) {
+  background-image: url("../images/mac.jpeg");
+}
+
+
+.container .section.hide {
+  -webkit-mask: url(../images/urban-sprite.png);
+          mask: url(../images/urban-sprite.png);
+  -webkit-mask-size: 3000% 100%;
+          mask-size: 3000% 100%;
+  -webkit-animation: mask-play 1.4s steps(29) forwards;
+          animation: mask-play 1.4s steps(29) forwards;
+}
+
+/*.container .section:nth-child(even).hide {
+  -webkit-mask: url(../images/urban-sprite-2.png);
+          mask: url(../images/urban-sprite-2.png);
+  -webkit-mask-size: 7400% 100%;
+          mask-size: 7400% 100%;
+  -webkit-animation: mask-play 1.4s steps(73) forwards;
+          animation: mask-play 1.4s steps(73) forwards;
+}*/
+
+.section{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
-
-.text h1 {
-  margin: 0px;
+button{
+  width: 100px;
+  height: 40px;
 }
